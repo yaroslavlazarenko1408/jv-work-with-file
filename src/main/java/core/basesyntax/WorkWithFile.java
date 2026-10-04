@@ -9,6 +9,7 @@ import java.io.IOException;
 public class WorkWithFile {
     private static final int SUPPLY_COMMA_POSITION = 7;
     private static final int BUY_COMMA_POSITION = 4;
+
     public void getStatistic(String fromFileName, String toFileName) {
         int supply = 0;
         int buy = 0;
