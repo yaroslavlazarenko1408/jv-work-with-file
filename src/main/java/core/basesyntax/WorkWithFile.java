@@ -7,9 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class WorkWithFile {
-    private static final int SUPPLY_COMMA_POSITION = 7;
-    private static final int BUY_COMMA_POSITION = 4;
-
     public void getStatistic(String fromFileName, String toFileName) {
         int supply = 0;
         int buy = 0;
@@ -20,11 +17,13 @@ public class WorkWithFile {
 
             while (value != null) {
                 if (value.charAt(0) == 's') {
-                    supply += Integer.parseInt(value.substring(SUPPLY_COMMA_POSITION));
+                    String[] parts = value.split(",");
+                    supply += Integer.parseInt(parts[1]);
                 }
 
                 if (value.charAt(0) == 'b') {
-                    buy += Integer.parseInt(value.substring(BUY_COMMA_POSITION));
+                    String[] parts = value.split(",");
+                    buy += Integer.parseInt(parts[1]);
                 }
 
                 value = reader.readLine();
