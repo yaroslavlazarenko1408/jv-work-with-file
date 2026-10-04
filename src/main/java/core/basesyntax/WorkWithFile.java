@@ -7,11 +7,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class WorkWithFile {
+    private static final int SUPPLY_COMMA_POSITION = 7;
+    private static final int BUY_COMMA_POSITION = 4;
     public void getStatistic(String fromFileName, String toFileName) {
         int supply = 0;
         int buy = 0;
-        final int SUPPLY_COMA_POSITION = 7;
-        final int BUY_COMA_POSITION = 4;
 
         try (BufferedReader reader = new BufferedReader(
                 new FileReader(fromFileName))) {
@@ -19,11 +19,11 @@ public class WorkWithFile {
 
             while (value != null) {
                 if (value.charAt(0) == 's') {
-                    supply += Integer.parseInt(value.substring(SUPPLY_COMA_POSITION));
+                    supply += Integer.parseInt(value.substring(SUPPLY_COMMA_POSITION));
                 }
 
                 if (value.charAt(0) == 'b') {
-                    buy += Integer.parseInt(value.substring(BUY_COMA_POSITION));
+                    buy += Integer.parseInt(value.substring(BUY_COMMA_POSITION));
                 }
 
                 value = reader.readLine();
